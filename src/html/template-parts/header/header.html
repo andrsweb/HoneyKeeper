@@ -33,5 +33,43 @@
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header class="header" id="header">
+			<div class="burger-bg">
+				<img src="img/header/burger-bg.svg" width="2000" height="2000" alt="Векторные пятиугольные соты с оранжево-серым градиентом">
+			</div>
+			<div class="container">
+				<div class="header-wrapper">
+					<div class="header-logo-wrapper">
+						<div class="header-logo-img">
+							<img src="/img/header/logo.svg" width="122" height="72" alt="Логотип векторной пчелы в оранежвом пятиугольнике с текстом `Хранитель меда`">
+						</div>
+						<span class="header-logo-desc">
+							Оптовые поставки мёда от производителя во все города России и СНГ
+						</span>
+					</div>
+					<div class="header-inner" id="header-inner">
+						<nav class="nav">
+							<ul>
+								<li><a href="#">Наш ассортимент</a></li>
+								<li><a href="#">Почему наш мёд лучший</a></li>
+								<li><a href="#">Помощь и консультация</a></li>
+								<li><a href="#">Доставка и оплата</a></li>
+							</ul>
+						</nav>
+						<div class="header-buttons">
+							@@include('../../components/buttons/button-grey/button-grey.html', {'class': 'download', 'svg': '../../../svg/download.html', 'text': 'Скачать прайс'})
+							@@include('../../components/buttons/button-grey/button-grey.html', {'class': 'contact', 'svg': '../../../svg/contact.html', 'text': 'Связаться с нами'})
+						</div>
+						<div class="header-info">
+							<p>
+								<strong>
+									По всем вопросам
+								</strong>
+							</p>
+							<a href="tel:+79493585800">+7 (949) 358–58–00</a>
+						</div>
+					</div>
+					@@include('../../components/buttons/burger-button/burger-button.html')
+				</div>
+			</div>
 		</header>

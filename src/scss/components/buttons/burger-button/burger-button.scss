@@ -1,0 +1,129 @@
+@use '../../../../scss/common/vars.scss' as *;
+
+.burger-button {
+	position: absolute;
+	right: 15px;
+	top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 11px 19px;
+	border: 1px solid $white;
+	background-color: rgba(255, 255, 255, 0.20);
+	border-radius: $br7;
+	transition: background-color ease $tr, border-color ease $tr, width ease $tr,
+				padding ease $tr, border-radius ease $tr, top ease $tr;
+
+	&-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 22px;
+		height: 22px;
+		margin-right: 10px;
+		position: relative;
+
+		svg {
+			width: 100%;
+			height: 100%;
+			transition: opacity ease $tr, visibility ease $tr, scale ease $tr;
+
+			path {
+				transition: fill ease $tr;
+			}
+		}
+
+		.burger-icon-close {
+			opacity: 0;
+			width: 0;
+			height: 0;
+			visibility: hidden;
+		}
+	}
+
+	span {
+		font-family: $ff;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 18px;
+		letter-spacing: 0.65px;
+		color: $white;
+		transition: color ease $tr;
+	}
+
+	&:hover {
+		background-color: $white;
+		border-color: $white;
+
+		span {
+			color: $dark;
+		}
+
+		svg {
+			&.burger-icon-start {
+				path {
+					&.path-a {
+						fill: $dark;
+					}
+				} 
+			}
+		}
+	}
+
+	&:active {
+		background-color: $active-bg;
+		border-color: $active-bg;
+	}
+
+	&.clicked {
+		border-radius: $br12;
+		padding: 9px 13px;
+
+		.burger-button-icon {
+			width: 24px;
+			height: 24px;
+			margin-right: 0;
+		}
+
+		svg {
+			&.burger-icon-start {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 0;
+				height: 0;
+				visibility: hidden;
+			}
+
+			&.burger-icon-close {
+				opacity: 1;
+				width: 100%;
+				height: 100%;
+				visibility: visible;
+			}
+		}
+
+		span {
+			display: none;
+		}
+
+		&:hover {
+			svg path {
+				fill: $dark;
+			}
+		}
+
+		&:active {
+			background-color: $white;
+
+			svg {
+				scale: 1.1;
+			}
+		}
+	}
+
+	@media(min-width: $lg) {
+		display: none;
+	}
+}

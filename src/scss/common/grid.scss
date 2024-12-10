@@ -3,24 +3,25 @@
 .container {
 	width: 100%;
 	max-width: 100%;
-	padding: 0 $container-padding;
+	padding: 0 $container-padding-sm;
 	margin: 0 auto;
 
-	@media all and (min-width: $md) {
-		max-width: $container-md
+	@media (min-width: $md) {
+		max-width: $container-md;
+		padding: 0 $container-padding-lg;
 	}
 
-	@media all and (min-width: $lg) {
+	@media (min-width: $lg) {
 		max-width: $container-lg
 	}
 
-	@media all and (min-width: $xl) {
+	@media (min-width: $xl) {
 		max-width: $container-xl
 	}
 
 	&-fluid {
 		width: 100%;
 		max-width: 100%;
-		padding: 0 $container-padding
+		padding: 0 $container-padding-lg
 	}
 }

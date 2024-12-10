@@ -9,10 +9,11 @@ $xxl: 1366px;
 // Container max-width.
 $container-md: 760px;
 $container-lg: 990px;
-$container-xl: 1200px;
+$container-xl: 1340px;
 
 // Container padding.
-$container-padding: 24px;
+$container-padding-sm: 15px;
+$container-padding-lg: 20px;
 
 // Font families.
 $ff			: 'Euclid Circular A', sans-serif;
@@ -37,6 +38,13 @@ $lh-title	: 1.3;
 // Colors.
 $white	: #FFFFFF;
 $black	: #000000;
+$dark	: #191E24;
+$grey-d	: #889099;
+$accent : #FEA434;
+$active-bg: #8a8a8a;
 
 // Others.
+$op: 0.75;
 $tr: 0.35s;
+$br7: 7px;
+$br12: 12px;

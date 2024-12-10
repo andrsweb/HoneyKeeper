@@ -1,0 +1,88 @@
+@use '../../../../scss/common/vars.scss' as *;
+
+.button-grey {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 11px 19px;
+	border: 1px solid $white;
+	background-color: rgba(255, 255, 255, 0.20);
+	border-radius: $br7;
+	transition: background-color ease $tr, border-color ease $tr;
+
+	&-icon {
+		width: 22px;
+		height: 22px;
+		margin-right: 10px;
+
+		svg {
+			width: 100%;
+			height: 100%;
+
+			path {
+				transition: fill ease $tr;
+			}
+		}
+	}
+
+	span {
+		font-family: $ff;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 18px;
+		letter-spacing: 0.65px;
+		color: $white;
+		transition: color ease $tr;
+	}
+
+	&.download {
+		&:hover {
+			span {
+				color: $dark;
+			}
+	
+			svg {
+				path {
+					transition: fill ease $tr;
+	
+					&.path-b {
+						fill: $dark;
+					}
+				}
+			}
+		}
+	}
+
+	&.contact {
+		&:hover {
+			span {
+				color: $dark;
+			}
+	
+			svg {
+				path {
+					transition: fill ease $tr;
+	
+					&.path-a {
+						fill: $dark;
+					}
+				}
+			}
+		}
+	}
+
+	&:hover {
+		background-color: $white;
+		border-color: $white;
+
+		span {
+			color: $dark;
+		}
+	}
+
+	&:active {
+		background-color: $active-bg;
+		border-color: $active-bg;
+	}
+}

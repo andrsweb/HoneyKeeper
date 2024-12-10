@@ -1,0 +1,274 @@
+@use '../common/vars.scss' as *;
+
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	background-color: transparent;
+	padding: 15px 0;
+	transition: background-color ease $tr, height ease $tr, padding ease $tr, box-shadow ease $tr,
+		backdrop-filter ease $tr;
+
+	@media(min-width: $lg) {
+		padding: 20px 0;
+	}
+
+	&.opened {
+		width: 100vw;
+		height: 100dvh;
+		background-color: $dark;
+		overflow-y: auto;
+
+		.header-logo-wrapper {
+			margin-right: auto;
+		}
+
+		.header-wrapper {
+			flex-direction: column;
+			gap: 10vh;
+		}
+
+		.header-inner {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px 0;
+			opacity: 1;
+		}
+
+		.burger-bg {
+			display: block;
+			scale: 1;
+			filter: blur(0px);
+		}
+	}
+
+	&.closed {
+		background-color: transparent;
+
+		.burger-bg {
+			opacity: 0;
+			scale: 2;
+			filter: blur(0px);
+		}
+
+		.header-inner {
+			opacity: 0;
+			transform: translateY(10%);
+		}
+	}
+
+	&.scrolled {
+		padding: 5px 0;
+		backdrop-filter: blur(5px);
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+		@media(min-width: $lg) {
+			padding: 10px;
+		}
+
+		.burger-button {
+			top: 10px;
+		}
+	}
+
+	.burger-bg {
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		transition: opacity ease $tr, scale ease $tr, filter ease $tr;
+		filter: blur(20px);
+
+		img {
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+		}
+	}
+
+	&-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&-logo-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		transition: opacity ease $tr;
+		cursor: pointer;
+
+		&:hover {
+			opacity: $op;
+		}
+	}
+
+	&-logo {
+		&-img {
+			img {
+				width: auto;
+				height: 56px;
+
+				@media(min-width: $lg) {
+					height: 72px;
+				}
+			}
+		}
+
+		&-desc {
+			display: none;
+			gap: 10px;
+			align-items: center;
+			width: 100%;
+			max-width: 242px;
+			font-family: $ff;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 18px;
+			color: $grey-d;
+
+			&::before {
+				content: '';
+				width: 1px;
+				height: 72px;
+				display: block;
+				background-color: $white;
+			}
+
+			@media(min-width: $xl) {
+				display: flex;
+			}
+		}
+	}
+
+	&-inner {
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		gap: 28px;
+		transition: opacity ease $tr, transform ease $tr;
+
+		nav {
+			ul {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 45px;
+
+				li a {
+					font-family: $ff;
+					font-size: 20px;
+					font-style: normal;
+					font-weight: $fw-semibold;
+					line-height: 28px;
+					color: $white;
+
+					&::after {
+						content: '';
+						display: block;
+						width: 100%;
+						height: 1px;
+						background-color: $accent;
+						margin-top: 7px;
+						transition: width ease $tr, background-color ease $tr;
+					}
+
+					&:active {
+						&::after {
+							width: 0;
+							background-color: $white;
+						}
+					}
+				}
+			}
+
+			@media(min-width: $lg) {
+				display: none;
+			}
+		}
+
+		@media(min-width: $lg) {
+			display: flex;
+		}
+	}
+
+	&-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 28px;
+
+		@media(min-width: $lg) {
+			flex-direction: row;
+		}
+	}
+
+	&-info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 5px;
+		align-items: center;
+
+		@media(min-width: $lg) {
+			align-items: flex-start;
+		}
+
+		p {
+			width: 100%;
+			font-family: $ff;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 16px;
+			color: $white;
+			text-align: center;
+
+			@media(min-width: $lg) {
+				text-align: left;
+			}
+		}
+
+		a {
+			font-family: $ff;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: $fw-semibold;
+			line-height: 20px;
+			color: $accent;
+			letter-spacing: 1px;
+			transition: opacity ease $tr;
+
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: $accent;
+				margin-top: 3px;
+				transition: width ease $tr, transform ease $tr;
+			}
+
+			&:hover {
+				&::after {
+					width: 0;
+				}
+			}
+
+			&:active {
+				opacity: $op;
+			}
+		}
+	}
+}
