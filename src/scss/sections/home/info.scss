@@ -8,6 +8,36 @@
 		padding: 30px 0;
 	}
 
+	&-overlay-left, &-overlay-right {
+		position: absolute;
+		z-index: -1;
+		
+		img {
+			width: 1943px;
+			height: 1359px;
+		}
+	}
+
+	&-overlay-left {
+		display: none;
+
+		@media(min-width: $xl) {
+			display: block;
+			left: -68%;
+			top: -15%;
+		}
+	}
+
+	&-overlay-right {
+		display: none;
+
+		@media(min-width: $lg) {
+			display: block;
+			top: 27%;
+			right: -55%;
+		}
+	}
+
 	&-bg {
 		position: absolute;
 		right: 0;
