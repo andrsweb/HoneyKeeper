@@ -1,0 +1,114 @@
+@forward '../../node_modules/swiper/swiper-bundle.min';
+@use '../../../scss/common/vars.scss' as *;
+
+.slider {
+	padding: 35px 0 50px;
+
+	@media(min-width: $lg) {
+		padding: 70px 0 100px;
+	}
+
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 45px;
+
+		@media(min-width: $lg) {
+			gap: 70px;
+		}
+	}
+
+	.swiper-box {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.swiper {
+		width: 222px;
+		overflow: visible;
+		margin: 0 auto 0 0;
+
+		@media(min-width: $md) {
+			width: 429px;
+			padding: 0 20px;
+		}
+
+		@media(min-width: $xxl) {
+			width: 100%;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		&-slide {
+			cursor: pointer;
+
+			img {
+				width: auto;
+				height: 193px;
+				clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+				object-fit: cover;
+
+				@media(min-width: $lg) {
+					height: 100%;
+				}
+
+				@media(min-width: $xxl) {
+					height: 371px;
+				}
+			}
+		}
+
+		&-nav {
+			width: 100%;
+			max-width: 1300px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 60px auto 0 auto;
+
+			.button-next, .button-prev {
+				width: 46px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #303439;
+				border: 1px solid $grey-d;
+				border-radius: $br6;
+				cursor: pointer;
+				transition: opacity ease $tr;
+	
+				&[disabled] {
+					opacity: 0.3;
+					cursor: not-allowed;
+				}
+			}
+
+			.pagination {
+				position: static;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 10px;
+
+				@media(min-width: $lg) {
+					margin: 0 65px;
+				}
+
+				.swiper-pagination-bullet {
+					width: calc(100% / 6);
+					height: 6px;
+					background-color: $accent;
+					border-radius: 50px;
+					transition: background-color ease $tr;
+
+					&-active {
+					}
+				}
+			}
+		}
+	}
+}

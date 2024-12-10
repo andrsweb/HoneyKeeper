@@ -54,13 +54,9 @@ h2,
 		top: 100%;
 		transform: translateX(-50%);
 		display: block;
-		width: 150%;
+		width: 105%;
 		height: 2px;
 		background-color: $accent;
-
-		@media (min-width: $lg) {
-			width: 105%;
-		}
 	}
 
 	@media (min-width: $lg) {

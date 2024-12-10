@@ -89,7 +89,7 @@
 		z-index: -1;
 		filter: blur(20px);
 		background-color: $dark;
-		transition: opacity ease $tr, scale ease $tr, filter ease $tr;
+		transition: opacity ease $tr, scale ease $tr, filter ease $tr, background-color ease $tr;
 
 		img {
 			width: 100vw;
@@ -160,6 +160,7 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 28px;
+		opacity: 0;
 		transition: opacity ease $tr, transform ease $tr;
 
 		nav {
@@ -204,6 +205,7 @@
 
 		@media(min-width: $lg) {
 			display: flex;
+			opacity: 1;
 		}
 	}
 

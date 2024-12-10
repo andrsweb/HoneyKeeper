@@ -9,6 +9,14 @@
 	gap: 25px;
 	margin: 0 auto;
 
+	&.lg {
+		max-width: 1153px;
+	}
+
+	&.sm {
+		max-width: 918px;
+	}
+
 	p {
 		text-align: center;
 		font-family: $ff;
