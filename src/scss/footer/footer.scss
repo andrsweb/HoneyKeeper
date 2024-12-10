@@ -1,0 +1,233 @@
+@use '../common/vars.scss' as *;
+
+.footer {
+	padding: 30px 0;
+	border-top: 1px solid #434B55;
+
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	&-logo-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+		transition: opacity ease $tr;
+		cursor: pointer;
+		margin-bottom: 20px;
+
+		&:hover {
+			opacity: $op;
+		}
+
+		@media(min-width: $lg) {
+			flex-direction: row;
+			margin-bottom: 0;
+		}
+	}
+
+	&-logo {
+		&-img {
+			img {
+				width: auto;
+				height: 56px;
+
+				@media(min-width: $lg) {
+					height: 72px;
+				}
+			}
+		}
+
+		&-desc {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			width: 100%;
+			max-width: 242px;
+			font-family: $ff;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 18px;
+			text-align: center;
+			color: $grey-d;
+
+			@media(min-width: $lg) {
+				text-align: left;
+				display: none;
+			}
+
+			&::before {
+				content: '';
+				width: 1px;
+				height: 72px;
+				background-color: $white;
+				display: none;
+
+				@media(min-width: $xl) {
+					display: block;
+				}
+			}
+
+			@media(min-width: $xl) {
+				display: flex;
+			}
+		}
+	}
+
+	&-top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		@media(min-width: $lg) {
+			flex-direction: row;
+		}
+	}
+
+	&-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		gap: 28px;
+
+		@media(min-width: $lg) {
+			flex-direction: row;
+		}
+	}
+
+	&-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 28px;
+
+		@media(min-width: $lg) {
+			flex-direction: row;
+		}
+	}
+
+	&-info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 5px;
+		align-items: center;
+
+		@media(min-width: $lg) {
+			align-items: flex-start;
+		}
+
+		p {
+			width: 100%;
+			font-family: $ff;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 16px;
+			color: $white;
+			text-align: center;
+
+			@media(min-width: $lg) {
+				text-align: left;
+			}
+		}
+
+		a {
+			font-family: $ff;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: $fw-semibold;
+			line-height: 20px;
+			color: $accent;
+			letter-spacing: 1px;
+			transition: opacity ease $tr;
+
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: $accent;
+				margin-top: 3px;
+				transition: width ease $tr, transform ease $tr;
+			}
+
+			&:hover {
+				&::after {
+					width: 0;
+				}
+			}
+
+			&:active {
+				opacity: $op;
+			}
+		}
+	}
+
+	&-bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 35px;
+		align-items: center;
+		justify-content: space-between;
+
+		@media(min-width: $lg) {
+			flex-direction: row;
+		}
+
+		&-left {
+			width: 100%;
+			max-width: 850px;
+
+			p {
+				font-family: $ff;
+				font-size: 15px;
+				font-style: normal;
+				font-weight: $fw-regular;
+				line-height: normal;
+				color: $grey-d;
+				text-align: center;
+
+				span {
+					color: $white;
+				}
+
+				@media(min-width: $lg) {
+					text-align: left;
+				}
+			}
+		}
+
+		&-right {
+			p {
+				font-family: $ff;
+				font-size: 15px;
+				font-style: normal;
+				font-weight: $fw-regular;
+				line-height: normal;
+				color: $grey-d;
+				text-align: center;
+
+				@media(min-width: $lg) {
+					text-align: left;
+				}
+
+				a {
+					color: $accent;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
