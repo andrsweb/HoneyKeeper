@@ -1,0 +1,27 @@
+<section class="goods">
+	<div class="container">
+		<div class="goods-wrapper">
+			<div class="goods-bg left">
+				<img src="img/goods/bg-left.svg" alt="Векторные соты">
+			</div>
+			<div class="goods-bg right">
+				<img src="img/goods/bg-left.svg" alt="Векторные соты">
+			</div>
+			@@include('../../../components/h2-wrapper/h2-wrapper.html', {'h2': 'Наш ассортимент', 'text': 'Настоящий, натуральный мёд высокого качества, который непосредственно с нашего улья попадает к Вам на стол. Пасека <strong>«Хранитель мёда»</strong> является производителем мёда и поэтому может отвечать за качество данного продукта.'})
+			<div class="goods-items">
+				<div class="goods-items-col">
+					@@loop('./goods-item.html', [
+						{'name': '«Экспарцет»', 'src': 'img/goods/g1.png'},
+						{'name': '«Гречка»', 'src': 'img/goods/g2.png'}
+					])
+				</div>
+				<div class="goods-items-col">
+					@@loop('./goods-item.html', [
+						{'name': '««Подсолнух»»', 'src': 'img/goods/g3.png'},
+						{'name': '«Разнотравье» ', 'src': 'img/goods/g4.png'}
+					])
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

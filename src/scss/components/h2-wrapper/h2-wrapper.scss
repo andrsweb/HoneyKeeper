@@ -1,0 +1,31 @@
+@use '../../../scss/common/vars.scss' as *;
+
+.h2-wrapper {
+	width: 100%;
+	max-width: 1153px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+	margin: 0 auto;
+
+	p {
+		text-align: center;
+		font-family: $ff;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 20px;
+		color: $grey-d;
+
+		strong {
+			font-weight: $fw-regular;
+			color: $accent;
+		}
+
+		@media (min-width: $lg) {
+			font-size: 20px;
+			line-height: 28px;
+		}
+	}
+}

@@ -1,0 +1,287 @@
+@use '../../../scss/common/vars.scss' as *;
+
+.goods {
+	padding: 0 0 70px;
+	position: relative;
+
+	@media(min-width: $lg) {
+		padding: 20px 0 70px;
+	}
+
+	&-bg, &-bg {
+		width: 1943px;
+		height: 1359px;
+		position: absolute;
+		z-index: -1;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&-bg {
+		&.left {
+			display: none;
+			right: -49%;
+			top: -1%;
+
+			@media(min-width: $md) {
+				right: 59%;
+				top: -1%;
+				display: block;
+			}
+
+			@media(min-width: $lg) {
+				display: block;
+			}
+
+			@media(min-width: $xl) {
+				right: 79%;
+				top: -1%;
+			}
+		}
+
+		&.right {
+			left: -115%;
+			top: 16.5%;
+
+			@media(min-width: $md) {
+				left: -13.5%;
+				top: 28.5%;
+			}
+
+			@media(min-width: $xl) {
+				left: 13.5%;
+				top: 48.5%;
+			}
+
+			@media(min-width: $xxl) {
+				left: 53.5%;
+				top: 48.5%;
+			}
+		}
+	}
+
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 53px;
+
+		@media(min-width: $lg) {
+			gap: 70px;
+		}
+	}
+
+	&-items {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 65px;
+
+		@media(min-width: $xl) {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+
+		@media(min-width: $xxl) {
+			gap: 110px;
+		}
+
+		&-col {
+			display: flex;
+			flex-direction: column;
+			gap: 45px;
+
+			@media(min-width: $xxl) {
+				gap: 175px;
+			}
+
+			&:last-child {
+				@media(min-width: $lg) {
+					padding-top: 45px;
+					gap: 45px;
+				}
+
+				@media(min-width: $xxl) {
+					padding-top: 175px;
+					gap: 175px;
+				}
+			}
+		}
+	}
+
+	&-item {
+		position: relative;
+		width: 300px;
+		height: 252px;
+
+		@media(min-width: $xs) {
+			width: 360px;
+			height: 312px;
+		}
+
+		@media(min-width: $md) {
+			width: 585px;
+			height: 507px;
+		}
+
+		@media(min-width: $xl) {
+			width: 525px;
+			height: 447px;
+		}
+
+		@media(min-width: $xxl) {
+			width: 585px;
+			height: 507px;
+		}
+
+		&-inner {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 30px;
+			gap: 8px;
+
+			@media(min-width: $xl) {
+				gap: 0;
+			}
+		}
+
+		&-bg {
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+
+			svg {
+				width: 100%;
+				height: 100%;
+				transition: filter ease $tr;
+				filter: drop-shadow(10px 10px 16px rgba(204, 156, 79, 0.25));
+
+				path {
+					transition: fill ease $tr, stroke ease $tr;
+					stroke: $accent;
+
+					@media(min-width: $md) {
+						stroke: #3A424D;
+					}
+				}
+				
+
+				@media(min-width: $md) {
+					filter: drop-shadow(0px 0px 0px);
+				}
+			}
+		}
+
+		&-img {
+			width: 120px;
+			height: 66px;
+
+			@media(min-width: $xs) {
+				width: 180px;
+				height: 116px;
+			}
+
+			@media(min-width: $md) {
+				width: 284px;
+				height: 184px;
+			}
+
+			@media(min-width: $xl) {
+				width: 214px;
+				height: 114px;
+			}
+
+			@media(min-width: $xxl) {
+				width: 284px;
+				height: 184px;
+			}
+
+			img {
+				width: auto;
+				height: 100%;
+			}
+		}
+
+		button {
+			padding: 10px 14px;
+
+			@media(min-width: $xs) {
+				padding: 17px 21px;
+			}
+
+			@media(min-width: $lg) {
+				padding: 20px 21px;
+			}
+		}
+
+		.choices-wrapper {
+			display: none;
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+			margin-bottom: 30px;
+
+			.choices-wrapper-title {
+				text-align: center;
+				font-family: $ff;
+				font-size: 13px;
+				font-style: normal;
+				font-weight: $fw-regular;
+				line-height: 18px;
+				color: $grey-d;
+			}
+
+			@media(min-width: $md) {
+				display: flex;
+			}
+		}
+
+		.choices {
+			width: 100%;
+			max-width: 395px;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+
+			&-item {
+				width: calc(100% / 3);
+				display: flex;
+				width: auto;
+				justify-content: center;
+				align-items: center;
+				padding: 6px 20px;
+				background-color: $dark-sky;
+				border: 1px solid #383E46;
+				border-radius: 50px;
+
+				span {
+					font-family: $ff;
+					font-size: 13px;
+					font-style: normal;
+					font-weight: $fw-regular;
+					line-height: 18px;
+					color: $white;
+				}
+			}
+		}
+
+		&:hover {
+			.goods-item-bg svg {
+				path {
+					stroke: $accent;
+				}
+				filter: drop-shadow(10px 10px 16px rgba(204, 156, 79, 0.25));
+			}
+		}
+	}
+}

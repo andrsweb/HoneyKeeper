@@ -1,0 +1,42 @@
+<div class="goods-item">
+	<div class="goods-item-bg">
+		@@include('../../../svg/pentagon.html')
+	</div>
+	<div class="goods-item-inner">
+		<div class="goods-item-title">
+			<h3>
+				Мёд натуральный
+				<span>
+					@@name
+				</span>
+			</h3>
+		</div>
+		<div class="goods-item-img">
+			<img src="@@src" alt="Изображение мёда">
+		</div>
+		<div class="choices-wrapper">
+			<div class="choices-wrapper-title">Варианты фасовки:</div>
+			<div class="choices">
+				<div class="choices-item">
+					<span>1,5л</span>
+				</div>
+				<div class="choices-item">
+					<span>700мл</span>
+				</div>
+				<div class="choices-item">
+					<span>500мл</span>
+				</div>
+				<div class="choices-item">
+					<span>300мл</span>
+				</div>
+				<div class="choices-item">
+					<span>125мл</span>
+				</div>
+				<div class="choices-item">
+					<span>50мл</span>
+				</div>
+			</div>
+		</div>
+		@@include('../../../components/buttons/button-gradient/button-gradient.html', {'text': 'Заказать оптом'})
+	</div>
+</div>
