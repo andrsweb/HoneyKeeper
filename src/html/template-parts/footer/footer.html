@@ -13,7 +13,7 @@
 				<div class="footer-inner" id="footer-inner">
 					<div class="footer-buttons">
 						@@include('../../components/buttons/button-grey/button-grey.html', {'class': 'download', 'svg':'../../../svg/download.html', 'text': 'Скачать прайс'})
-						@@include('../../components/buttons/button-grey/button-grey.html', {'class': 'contact', 'svg':'../../../svg/contact.html', 'text': 'Связаться с нами'})
+						@@include('../../components/buttons/button-grey/button-grey.html', {'class': 'contact open-modal', 'svg':'../../../svg/contact.html', 'text': 'Связаться с нами'})
 					</div>
 					<div class="footer-info">
 						<p>
@@ -30,12 +30,13 @@
 					<p><span>Copyright © 2013-2025.</span> Все фото, видео материалы, а так же информация предоставленная на сайте, является интеллектуальной собственностью. Копирование и распространение запрещено законодательством РФ</p>
 				</div>
 				<div class="footer-bottom-right">
-					<p>Сайт разработан любителями сладкого — <a href="#">MW Agency</a></p>
+					<p>Сайт разработан любителями сладкого — <a href="#"> MW Agency</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
 </footer>
+@@include('../../components/modals/modal.html')
 </div><!-- .wrapper -->
 
 <script src="js/main.min.js"></script>

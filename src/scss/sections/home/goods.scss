@@ -1,11 +1,11 @@
 @use '../../../scss/common/vars.scss' as *;
 
 .goods {
-	padding: 0 0 70px;
+	padding: 60px 0;
 	position: relative;
 
 	@media(min-width: $lg) {
-		padding: 20px 0 70px;
+		padding: 120px 0;
 	}
 
 	&-bg, &-bg {

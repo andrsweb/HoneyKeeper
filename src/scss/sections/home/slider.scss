@@ -3,10 +3,10 @@
 @use '../../../scss/common/vars.scss' as *;
 
 .slider {
-	padding: 35px 0 50px;
+	padding: 60px 0;
 
 	@media(min-width: $lg) {
-		padding: 70px 0 100px;
+		padding: 120px 0;
 	}
 
 	&-wrapper {

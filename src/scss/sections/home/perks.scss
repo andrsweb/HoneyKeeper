@@ -1,11 +1,11 @@
 @use '../../../scss/common/vars.scss' as *;
 
 .perks {
-	padding: 0 0 45px;
+	padding: 0 0 30px;
 	transform: translateY(-40px);
 
 	@media(min-width: $lg) {
-		padding: 0 0 60px;
+		padding: 0 0 30px;
 	}
 
 	&-wrapper {
