@@ -35,36 +35,42 @@
 			flex-direction: column;
 			align-items: center;
 			padding: 20px 0;
-			opacity: 1;
+			animation:  fadeIn $tr forwards;
+
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				
+				100% {
+					opacity: 1;
+				}
+			}
 		}
 
 		.burger-bg {
 			display: block;
-			scale: 1;
-			filter: blur(0px);
+			background-color: $dark;
+			opacity: 1;
 		}
 	}
 
 	&.closed {
-		background-color: transparent;
-
 		.burger-bg {
 			opacity: 0;
 			scale: 2;
-			filter: blur(0px);
 		}
 
 		.header-inner {
-			opacity: 0;
-			transform: translateY(10%);
+			scale: 0.2;
+			transform: skew(-50deg, -40deg);
 		}
 	}
 
 	&.scrolled {
 		padding: 5px 0;
-		backdrop-filter: blur(15px);
 		box-shadow: $bs-header;
-		background-color: #474B5050;
+		background-color: $dark;
 
 		@media(min-width: $lg) {
 			padding: 10px;
@@ -72,10 +78,6 @@
 
 		.burger-button {
 			top: 10px;
-		}
-
-		&.opened {
-			background-color: $dark;
 		}
 	}
 
@@ -87,9 +89,8 @@
 		width: 100%;
 		height: 100%;
 		z-index: -1;
-		filter: blur(20px);
-		background-color: $dark;
-		transition: opacity ease $tr, scale ease $tr, filter ease $tr, background-color ease $tr;
+		opacity: 0;
+		transition: opacity ease $tr, scale ease $tr;
 
 		img {
 			width: 100vw;
@@ -161,7 +162,7 @@
 		justify-content: space-between;
 		gap: 28px;
 		opacity: 0;
-		transition: opacity ease $tr, transform ease $tr;
+		transition: opacity ease $tr, scale ease $tr, transform ease $tr;
 
 		nav {
 			ul {
