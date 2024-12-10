@@ -81,6 +81,14 @@
 				border-radius: $br6;
 				cursor: pointer;
 				transition: opacity ease $tr;
+
+				&:hover {
+					opacity: $op;
+				}
+
+				&:active {
+					opacity: 1;
+				}
 	
 				&[disabled] {
 					opacity: 0.3;
@@ -104,10 +112,7 @@
 					height: 6px;
 					background-color: $accent;
 					border-radius: 50px;
-					transition: background-color ease $tr;
-
-					&-active {
-					}
+					transition: background-color ease $tr, opacity ease $tr;
 				}
 			}
 		}
