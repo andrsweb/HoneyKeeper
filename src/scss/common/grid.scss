@@ -24,4 +24,8 @@
 		max-width: 100%;
 		padding: 0 $container-padding-lg
 	}
+
+	&.big {
+		max-width: 1430px;
+	}
 }

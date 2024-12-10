@@ -12,10 +12,17 @@ const toggleBurgerMenu = (button, selector) => {
 
 	if (!burgerButton || !header) return
 
-	const closeMenu = () => {
+	const closeMenu = (transition) => {
 		header.classList.add('closed')
 		burgerButton.classList.remove('clicked')
-		setTimeout(() => header.classList.remove('opened', 'closed'), TRANSITION_TIME)
+
+		if(transition) {
+			setTimeout(() => header.classList.remove('opened', 'closed'), TRANSITION_TIME)
+		} else {
+			header.classList.remove('opened')
+			header.classList.remove('closed')
+		}
+		
 		enableBodyScroll(targetElement)
 	}
 
@@ -26,20 +33,20 @@ const toggleBurgerMenu = (button, selector) => {
 			header.classList.remove('closed')
 			disableBodyScroll(targetElement, { reserveScrollBarGap: true })
 		} else {
-			closeMenu()
+			closeMenu(true)
 		}
 	}
 
 	window.addEventListener('resize', () => {
 		if (window.innerWidth >= WINDOW_INNER_WIDTH_LG) {
-			closeMenu()
+			closeMenu(false)
 			burgerButton.classList.remove('clicked')
 		}
 	})
 
 	document.querySelectorAll('.header li a').forEach(link =>
 		link.addEventListener('click', () => {
-			if (header.classList.contains('opened')) closeMenu()
+			if (header.classList.contains('opened')) closeMenu(true)
 		})
 	)
 

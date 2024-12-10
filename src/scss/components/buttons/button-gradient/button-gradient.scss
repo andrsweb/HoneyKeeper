@@ -1,0 +1,55 @@
+@use '../../../../scss/common/vars.scss' as *;
+
+.button-gradient {
+	padding: 17px 21px;
+	background-color: $accent;
+	border-radius: $br12;
+	position: relative;
+	transition: transform ease $tr;
+
+	@media(min-width: $lg) {
+		padding: 20px 21px;
+	}
+
+	span {
+		font-family: $ff;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 18px;
+		letter-spacing: 0.7px;
+		text-transform: uppercase;
+		color: $white;
+		position: relative;
+		z-index: 1;
+
+		@media(min-width: $lg) {
+			font-size: 15px;
+			letter-spacing: 0.75px;
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: $orange-grad;
+		border-radius: $br12;
+		opacity: 0;
+		transition: opacity ease $tr;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	&:active {
+		transform: translateY(5px);
+	}
+}

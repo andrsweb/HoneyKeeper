@@ -8,8 +8,7 @@
 	z-index: 99;
 	background-color: transparent;
 	padding: 15px 0;
-	transition: background-color ease $tr, height ease $tr, padding ease $tr, box-shadow ease $tr,
-		backdrop-filter ease $tr;
+	transition: background-color ease $tr, padding ease $tr, box-shadow ease $tr;
 
 	@media(min-width: $lg) {
 		padding: 20px 0;
@@ -18,8 +17,8 @@
 	&.opened {
 		width: 100vw;
 		height: 100dvh;
-		background-color: $dark;
 		overflow-y: auto;
+		overflow: hidden;
 
 		.header-logo-wrapper {
 			margin-right: auto;
@@ -63,8 +62,9 @@
 
 	&.scrolled {
 		padding: 5px 0;
-		backdrop-filter: blur(5px);
-		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+		backdrop-filter: blur(15px);
+		box-shadow: $bs-header;
+		background-color: #474B5050;
 
 		@media(min-width: $lg) {
 			padding: 10px;
@@ -72,6 +72,10 @@
 
 		.burger-button {
 			top: 10px;
+		}
+
+		&.opened {
+			background-color: $dark;
 		}
 	}
 
@@ -83,8 +87,9 @@
 		width: 100%;
 		height: 100%;
 		z-index: -1;
-		transition: opacity ease $tr, scale ease $tr, filter ease $tr;
 		filter: blur(20px);
+		background-color: $dark;
+		transition: opacity ease $tr, scale ease $tr, filter ease $tr;
 
 		img {
 			width: 100vw;

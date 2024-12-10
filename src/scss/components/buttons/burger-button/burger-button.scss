@@ -9,7 +9,7 @@
 	justify-content: center;
 	padding: 11px 19px;
 	border: 1px solid $white;
-	background-color: rgba(255, 255, 255, 0.20);
+	background-color: $dark-grey;
 	border-radius: $br7;
 	transition: background-color ease $tr, border-color ease $tr, width ease $tr,
 				padding ease $tr, border-radius ease $tr, top ease $tr;

@@ -1,23 +1,40 @@
 @use './vars.scss' as *;
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
 	font-family: $ff;
 	font-weight: $fw-medium;
 	margin: 0;
 }
 
-h1, .h1 {
-	font-size: 32px;
+h1,
+.h1 {
+	font-size: 30px;
+	font-style: normal;
+	font-weight: $fw-medium;
+	line-height: 42px;
+	color: $light;
+	text-align: center;
 
 	@media (min-width: $lg) {
-		font-size: 36px
+		font-size: 52px;
+		line-height: 62px;
+		text-align: left;
+	}
+
+	span {
+		color: $accent;
 	}
 }
 
-h2, .h2 {
+h2,
+.h2 {
 	font-size: 24px;
 
 	@media (min-width: $lg) {
@@ -25,11 +42,13 @@ h2, .h2 {
 	}
 }
 
-h3, .h3 {
+h3,
+.h3 {
 	font-size: 30px
 }
 
-h4, .h4 {
+h4,
+.h4 {
 	font-size: $fs-xl;
 
 	@media (min-width: $lg) {
@@ -47,6 +66,7 @@ p {
 	margin: 0;
 }
 
-b, strong {
+b,
+strong {
 	font-weight: $fw-semibold
 }

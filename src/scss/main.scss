@@ -13,7 +13,9 @@
 
 //Components 
 @forward 'components/buttons/button-grey/button-grey';
+@forward 'components/buttons/button-gradient/button-gradient';
 @forward 'components/buttons/burger-button/burger-button';
 
 // Home page sections styles.
 @forward 'sections/home/hero';
+@forward 'sections/home/perks';

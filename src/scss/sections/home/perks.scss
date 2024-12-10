@@ -1,0 +1,88 @@
+@use '../../../scss/common/vars.scss' as *;
+
+.perks {
+	padding: 0 0 45px;
+	transform: translateY(-40px);
+
+	@media(min-width: $lg) {
+		padding: 0 0 60px;
+	}
+
+	&-wrapper {
+		width: 100%;
+
+		&-inner {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 25px;
+			padding: 35px 15px;
+			background: rgba(45, 53, 62, 0.30);
+			backdrop-filter: blur(8px);
+			border-radius: $br32;
+
+			@media(min-width: $lg) {
+				flex-direction: row;
+				align-items: stretch;
+				padding: 45px 40px;
+			}
+
+			.perks-card {
+				width: 100%;
+				padding: 15px;
+				border-radius: $br12;
+				background-color: $dark-blue;
+				box-shadow: $bs-card;
+
+				@media(min-width: $lg) {
+					width: calc(100% / 3);
+				}
+
+				&-inner {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					gap: 6px;
+
+					@media(min-width: $xl) {
+						flex-direction: row;
+					}
+				}
+
+				&-img {
+					width: 70px;
+					height: auto;
+					max-height: 96px;
+				}
+
+				p {
+					width: 100%;
+					font-family: $ff;
+					font-size: 15px;
+					font-style: normal;
+					font-weight: $fw-regular;
+					line-height: 22px;
+					color: $white;
+					text-align: center;
+
+					@media(min-width: $xl) {
+						width: calc(100% - 73px);
+					}
+
+					span {
+						color: $accent;
+					}
+
+					@media(min-width: $xl) {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}
