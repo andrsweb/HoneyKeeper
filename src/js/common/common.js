@@ -1,8 +1,12 @@
+import { Fancybox } from "@fancyapps/ui"
+
 document.addEventListener('DOMContentLoaded', () => {
 	'use strict'
 
 	headerScroll()
 })
+
+Fancybox.bind('[data-fancybox="gallery"]')
 
 const headerScroll = () => {
 	const header = document.querySelector('.header')

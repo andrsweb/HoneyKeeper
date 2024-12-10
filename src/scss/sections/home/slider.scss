@@ -1,4 +1,5 @@
 @forward '../../node_modules/swiper/swiper-bundle.min';
+@forward '../../../../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
 @use '../../../scss/common/vars.scss' as *;
 
 .slider {
