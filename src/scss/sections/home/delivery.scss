@@ -5,11 +5,11 @@
 	position: relative;
 
 	&-map {
-		width: 935px;
-		height: 500px;
+		width: 426px;
+		height: 227px;
 		position: absolute;
 		right: 50%;
-		bottom: 25%;
+		bottom: 35%;
 		transform: translateX(50%);
 		z-index: -1;
 
@@ -19,6 +19,8 @@
 		}
 
 		@media(min-width: $md) {
+			width: 935px;
+			height: 500px;
 			right: 0;
 			bottom: 5%;
 			transform: translateX(0);
